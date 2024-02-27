@@ -32,6 +32,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: root
           key: ${{secrets.key}}
-          script:
+          script: |
             cd /root/1/
             node hello.js
