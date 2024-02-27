@@ -8,16 +8,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.19.0]
     
     steps:
-     - name: Set up Node.js
-        uses:actions/setup-node@v2
-        with：
-          node-version:'20.0'
-
-          
+               
      - name: Checkout repository
        uses: actions/checkout@v2
+       
+     - name: Set up Node.js
+       uses: actions/setup-node@v2
      - run: node hello.js
         
 
