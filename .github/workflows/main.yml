@@ -28,11 +28,6 @@ jobs:
 
      - name: Deploy to server
        uses: appleboy/ssh-action@master
-       env:
-        GITHUB_TOKEN: ${{ secrets.address }}
-        HOST: Mona
-        key: Octoca
-    
        with:
           host: ${{secrets.HOST}}
           username: root
