@@ -34,9 +34,9 @@ jobs:
         key: Octoca
     
        with:
-          host: ${{secrets.address_HOST}}
+          host: ${{secrets.HOST}}
           username: root
-          key: ${{secrets.address_key}}
+          key: ${{secrets.KEY}}
           port: 22
           script: |
             cd /root/1/
