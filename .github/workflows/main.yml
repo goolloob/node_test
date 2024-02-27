@@ -20,7 +20,7 @@ jobs:
         with:
           host: ${{ ADDRESS }}
           username: root
-          password: ${{ host }}
+          password: ${{secrets.SERVER_PASSWORD}}
           script:
             cd /root/1/
             node hello.js
