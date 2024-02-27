@@ -12,15 +12,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - run: node hello.js
+        
 
       # 在这里添加您的构建步骤，例如安装依赖、构建项目等
 
       - name: Deploy to server
         uses: appleboy/ssh-action@master
+    
         with:
-          host: ${{ env.ADDRESS }}
+          host: ${{ secrets.ADDRESS }}
           username: root
-          password: ${{secrets.SERVER_PASSWORD}}
+          key: ${{secrets.key}}
           script:
             cd /root/1/
             node hello.js
