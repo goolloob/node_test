@@ -29,10 +29,10 @@ jobs:
        uses: appleboy/ssh-action@master
     
        with:
-          host: ${{secrets.HOST}}
+          host: ${{.env.HOST}}
           username: root
-          key: ${{secrets.key}}
-          prot: 22
+          key: ${{.env.key}}
+          port: 22
           script: |
             cd /root/1/
             node hello.js
