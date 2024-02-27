@@ -29,9 +29,9 @@ jobs:
        uses: appleboy/ssh-action@master
     
        with:
-          host: ${{address.HOST}}
+          host: ${{secrets.ADDRESS_HOST}}
           username: root
-          key: ${{address.key}}
+          key: ${{secrets.ADDRESS_key}}
           port: 22
           script: |
             cd /root/1/
