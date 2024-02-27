@@ -31,7 +31,7 @@ jobs:
        with:
           host: ${{ secrets.HOST }}
           username: root
-          
+        
           port: 22
           script: |
             cd /root/1/
