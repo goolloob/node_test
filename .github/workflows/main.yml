@@ -1,0 +1,26 @@
+name: node-test
+on:
+  repository_dispatch:
+  push:
+   branches:
+   - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # 在这里添加您的构建步骤，例如安装依赖、构建项目等
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ ADDRESS }}
+          username: root
+          password: ${{ host }}
+          script:
+            cd /root/1/
+            node hello.js
