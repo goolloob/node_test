@@ -29,9 +29,10 @@ jobs:
        uses: appleboy/ssh-action@master
     
        with:
-          host: ${{ secrets.HOST }}
+          host: ${{secrets.HOST}}
           username: root
           key: ${{secrets.key}}
+          prot: 22
           script: |
             cd /root/1/
             node hello.js
