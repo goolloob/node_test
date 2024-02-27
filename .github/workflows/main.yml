@@ -10,17 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - run: node hello.js
+     - name: Set up Node.js
+        uses:actions/setup-node@v2
+        with：
+          node-version:'20.0'
+
+          
+     - name: Checkout repository
+       uses: actions/checkout@v2
+     - run: node hello.js
         
 
       # 在这里添加您的构建步骤，例如安装依赖、构建项目等
 
-      - name: Deploy to server
-        uses: appleboy/ssh-action@master
+     - name: Deploy to server
+       uses: appleboy/ssh-action@master
     
-        with:
+       with:
           host: ${{ secrets.ADDRESS }}
           username: root
           key: ${{secrets.key}}
